@@ -39,6 +39,15 @@ class ListPage extends StatelessWidget {
                           .map((e) => CardCourses(
                                 category: e.data()['category'],
                                 desc: e.data()['desc'],
+                                totalVideo: e.data()['Total Video'],
+                                onUpdate: () {
+                                  courses.doc(e.id).update({
+                                    'Total Video': e.data()['Total Video'] + 1,
+                                  });
+                                },
+                                onDelete: () {
+                                  courses.doc(e.id).delete();
+                                },
                               ))
                           .toList(),
                     );

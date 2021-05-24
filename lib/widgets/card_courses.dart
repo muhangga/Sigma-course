@@ -4,8 +4,16 @@ import 'package:sigma_course/common/theme.dart';
 class CardCourses extends StatelessWidget {
   final String category;
   final String desc;
+  final int totalVideo;
+  final Function onUpdate;
+  final Function onDelete;
   const CardCourses({
-    Key key, this.category, this.desc,
+    Key key,
+    this.category,
+    this.desc,
+    this.onUpdate,
+    this.onDelete,
+    this.totalVideo,
   }) : super(key: key);
 
   @override
@@ -14,21 +22,50 @@ class CardCourses extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 10),
       child: Card(
         child: ListTile(
+          leading: GestureDetector(
+            onTap: onUpdate,
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: primaryColor,
+              ),
+              child: Center(
+                  child: Icon(
+                Icons.design_services,
+                color: whiteColor,
+                size: 28,
+              )),
+            ),
+          ),
           title: Text(category),
-          subtitle: Text(desc),
+          isThreeLine: true,
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(desc),
+              SizedBox(height: 8),
+              Text('Total Video : $totalVideo'),
+            ],
+          ),
           trailing: Container(
             height: 40,
             width: 40,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: primaryColor,
+              color: Colors.red,
             ),
-            child: Center(
+            child: GestureDetector(
+              onTap: onDelete,
+              child: Center(
                 child: Icon(
-              Icons.arrow_right_outlined,
-              color: whiteColor,
-              size: 32,
-            )),
+                  Icons.delete,
+                  color: whiteColor,
+                  size: 24,
+                ),
+              ),
+            ),
           ),
         ),
       ),
