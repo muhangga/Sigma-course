@@ -30,8 +30,19 @@ class _HomePageState extends State<HomePage> {
                         horizontal: 24, vertical: 36),
                     child: Row(
                       children: [
-                        CircleAvatar(
-                          backgroundColor: yellowColor,
+                        Container(
+                          padding: EdgeInsets.all(70),
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: whiteColor,
+                            border: Border.all(color: whiteColor, width: 2),
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/avatar.png'),
+                                fit: BoxFit.cover,
+                                alignment: Alignment.center),
+                          ),
                         ),
                         SizedBox(width: 14),
                         Column(
@@ -42,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                               style: whiteTextStyle.copyWith(fontSize: 18),
                             ),
                             Text(
-                              'Adinda Risty Kupret',
+                              'Adinda Risty',
                               style: whiteTextStyle.copyWith(fontSize: 14),
                             ),
                           ],

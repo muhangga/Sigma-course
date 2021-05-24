@@ -17,15 +17,55 @@ class ListPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 170,
-                width: size.width,
-                child: Image.asset('assets/images/background.png',
-                    fit: BoxFit.fitWidth),
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 170,
+                    width: size.width,
+                    child: Image.asset('assets/images/background.png',
+                        fit: BoxFit.fitWidth),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 36),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(70),
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: whiteColor,
+                            border: Border.all(color: whiteColor, width: 2),
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/avatar.png'),
+                                fit: BoxFit.cover,
+                                alignment: Alignment.center),
+                          ),
+                        ),
+                        SizedBox(width: 14),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Holla,',
+                              style: whiteTextStyle.copyWith(fontSize: 18),
+                            ),
+                            Text(
+                              'Adinda Risty',
+                              style: whiteTextStyle.copyWith(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 35, vertical: 20),
                 child: Text('List Courses',
                     style: primaryTextStyle.copyWith(
                         fontSize: 18, fontWeight: FontWeight.bold)),
