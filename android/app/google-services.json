@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "267376719743",
+    "project_id": "sigma-course",
+    "storage_bucket": "sigma-course.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267376719743:android:e22797e732969058614c4a",
+        "android_client_info": {
+          "package_name": "com.example.sigma_course"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267376719743-ppq03lajai8k12c1emcj6eoq4lhcfv5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMOH2WhMtHKR5iMLshzPTnDfCixcK0O_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267376719743-ppq03lajai8k12c1emcj6eoq4lhcfv5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

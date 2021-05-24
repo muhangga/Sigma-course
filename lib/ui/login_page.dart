@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sigma_course/common/theme.dart';
-import 'package:sigma_course/ui/home_page.dart';
 import 'package:sigma_course/ui/register_page.dart';
 import 'package:sigma_course/widgets/account_widget.dart';
+import 'package:sigma_course/widgets/bottom_navbar.dart';
 import 'package:sigma_course/widgets/button_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                 text: 'Login',
                 onPress: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                      MaterialPageRoute(builder: (context) => BottomNavbar()));
                 },
               ),
               AccountWidget(

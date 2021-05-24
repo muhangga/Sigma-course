@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:sigma_course/common/theme.dart';
 import 'package:sigma_course/data/dummy_category.dart';
 import 'package:sigma_course/ui/detail_page.dart';
-import 'package:sigma_course/ui/profile_page.dart';
-import 'package:sigma_course/widgets/bottom_navbar.dart';
 import 'package:sigma_course/widgets/category_list_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,6 +16,7 @@ class _HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Stack(
@@ -149,76 +148,48 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 14),
-                        Container(
-                            width: size.width,
-                            height: size.height,
-                            child: ListView(
-                              children: categoryList.map((category) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            DetailPage(category: category),
+                        Center(
+                          child: Container(
+                              width: 305,
+                              height: size.height,
+                              child: ListView(
+                                children: categoryList.map((category) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              DetailPage(category: category),
+                                        ),
+                                      );
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.only(bottom: 12),
+                                      height: 150,
+                                      width: 305,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                        color: Color(0xfff8f8f8),
                                       ),
-                                    );
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.only(bottom: 12),
-                                    height: 150,
-                                    width: 305,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Color(0xfff8f8f8),
+                                      child: Image.asset(
+                                        category.imageUrl,
+                                      ),
                                     ),
-                                    child: Image.asset(category.imageUrl),
-                                  ),
-                                );
-                              }).toList(),
-                            )),
+                                  );
+                                }).toList(),
+                              )),
+                        ),
+                        SizedBox(height: 60),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
           ),
         ),
       ),
-      floatingActionButton: Container(
-        height: 55,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-          color: whiteColor,
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 10),
-              blurRadius: 100,
-              color: Colors.black.withOpacity(0.3),
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            BottomNavbarItem(
-              icon: Icons.home,
-              isActive: true,
-            ),
-            BottomNavbarItem(
-              icon: Icons.person,
-              isActive: false,
-              onPress: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()));
-              },
-            ),
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
