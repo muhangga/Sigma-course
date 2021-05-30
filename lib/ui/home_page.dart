@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sigma_course/common/theme.dart';
 import 'package:sigma_course/data/dummy_category.dart';
 import 'package:sigma_course/ui/detail_page.dart';
+import 'package:sigma_course/ui/setting_page.dart';
 import 'package:sigma_course/widgets/category_list_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -59,9 +60,20 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         Spacer(),
-                        Image.asset(
-                          'assets/images/bell.png',
-                          width: 25,
+                        IconButton(
+                          icon: Icon(
+                            Icons.settings,
+                            size: 24,
+                            color: whiteColor,
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SettingPage(),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -154,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                             )),
                         SizedBox(height: 14),
                         Text(
-                          'Category',
+                          'Classess',
                           style: primaryTextStyle.copyWith(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),

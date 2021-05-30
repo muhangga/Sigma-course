@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:sigma_course/common/theme.dart';
 import 'package:sigma_course/ui/Firebase_CRUD/add_course_page.dart';
-import 'package:sigma_course/widgets/card_courses.dart';
+import 'package:sigma_course/widgets/card_courses_widget.dart';
 
 class ListPage extends StatelessWidget {
   @override

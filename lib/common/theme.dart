@@ -8,6 +8,7 @@ Color greyColor = Color(0xffB8B8B8);
 Color grey2Color = Color(0xff828282);
 Color whiteColor = Color(0xffffffff);
 Color yellowColor = Color(0xffFDBF00);
+Color blackColor = Color(0xffF000000);
 
 TextStyle primaryTextStyle = GoogleFonts.poppins()
     .copyWith(color: primaryColor, fontWeight: FontWeight.w500);
@@ -29,3 +30,6 @@ TextStyle whiteTextStyle = GoogleFonts.poppins()
 
 TextStyle yellowTextStyle = GoogleFonts.poppins()
     .copyWith(color: yellowColor, fontWeight: FontWeight.w500);
+
+TextStyle blackTextStyle = GoogleFonts.poppins()
+    .copyWith(color: blackColor, fontWeight: FontWeight.w500);

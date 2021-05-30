@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sigma_course/common/theme.dart';
-import 'package:sigma_course/ui/login_page.dart';
-import 'package:sigma_course/widgets/button_widget.dart';
 import 'package:sigma_course/widgets/profile_widget.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -36,7 +34,7 @@ class ProfilePage extends StatelessWidget {
                 npm: '065118183',
               ),
               ProfileWidget(
-                top: 360,
+                top: 370,
                 bottom: 0,
                 colorBackground: Color(0xffF2FAFF),
                 colorBorder: Color(0xff0582CA),
@@ -52,21 +50,6 @@ class ProfilePage extends StatelessWidget {
                 imageUrl: 'assets/images/avatar.png',
                 name: 'Salsa Nadira Putri',
                 npm: '065118203',
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: ButtonWidget(
-                  left: 20,
-                  right: 20,
-                  top: 850,
-                  bottom: 50,
-                  colorButton: blueColor,
-                  text: 'Logout',
-                  onPress: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
-                  },
-                ),
               ),
             ],
           ),
