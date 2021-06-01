@@ -12,6 +12,13 @@ class ListPage extends StatelessWidget {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text('List Course'),
+        centerTitle: true,
+        backgroundColor: Color(0xff47C4E0),
+        elevation: 1,
+        toolbarHeight: 70,
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -53,7 +60,7 @@ class ListPage extends StatelessWidget {
                               style: whiteTextStyle.copyWith(fontSize: 18),
                             ),
                             Text(
-                              'Adinda Risty',
+                              'Adinda Risty Kumala',
                               style: whiteTextStyle.copyWith(fontSize: 14),
                             ),
                           ],

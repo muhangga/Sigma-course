@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sigma_course/common/theme.dart';
 import 'package:sigma_course/data/dummy_category.dart';
 import 'package:sigma_course/ui/detail_page.dart';
-import 'package:sigma_course/ui/setting_page.dart';
 import 'package:sigma_course/widgets/category_list_widget.dart';
+import 'package:sigma_course/widgets/drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,17 +18,26 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Color(0xff47C4E0),
+      ),
+      drawer: DrawerWidget(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Stack(
             children: [
-              Image.asset('assets/images/background_home.png'),
+              Container(
+                height: 170,
+                width: double.infinity,
+                color: Color(0xff47C4E0),
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 36),
+                        horizontal: 20, vertical: 10),
                     child: Row(
                       children: [
                         Container(
@@ -54,34 +63,17 @@ class _HomePageState extends State<HomePage> {
                               style: whiteTextStyle.copyWith(fontSize: 18),
                             ),
                             Text(
-                              'Adinda Risty',
+                              'Adinda Risty Kumala',
                               style: whiteTextStyle.copyWith(fontSize: 14),
                             ),
                           ],
-                        ),
-                        Spacer(),
-                        IconButton(
-                          icon: Icon(
-                            Icons.settings,
-                            size: 24,
-                            color: whiteColor,
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SettingPage(),
-                              ),
-                            );
-                          },
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                    ),
+                    padding:
+                        const EdgeInsets.only(left: 24, right: 24, top: 10),
                     child: Text(
                       'Lets Study !',
                       style: whiteTextStyle.copyWith(
@@ -175,15 +167,16 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                               width: 305,
                               height: size.height,
-                              child: ListView(
-                                children: categoryList.map((category) {
+                              child: ListView.builder(
+                                itemCount: 5,
+                                itemBuilder: (context, index) {
                                   return GestureDetector(
                                     onTap: () {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) =>
-                                              DetailPage(category: category),
+                                          builder: (context) => DetailPage(
+                                              category: categoryList[index]),
                                         ),
                                       );
                                     },
@@ -196,11 +189,11 @@ class _HomePageState extends State<HomePage> {
                                         color: Color(0xfff8f8f8),
                                       ),
                                       child: Image.asset(
-                                        category.imageUrl,
+                                        categoryList[index].imageUrl,
                                       ),
                                     ),
                                   );
-                                }).toList(),
+                                },
                               )),
                         ),
                         SizedBox(height: 60),
