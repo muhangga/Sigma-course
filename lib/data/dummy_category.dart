@@ -8,6 +8,23 @@ var categoryList = [
     imageUrl: 'assets/images/ekonomi.png',
     iconUrl: 'assets/icon/ic_ekonomi.png',
     color: ekonomiColor,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet lectus proin nibh nisl condimentum id venenatis a. Nulla pellentesque dignissim enim sit amet venenatis urna.',
+    rating: 8,
+    student: 50,
+    listCourseTitle: [
+      'Apa itu Ekonomi?',
+      'Pembagian ilmu ekonomi',
+      'Prinsip, Motif, Hukum Ekonomi',
+      'Biaya Peluang',
+      'Ekonomi Syariah'
+    ],
+    listCourseDuration: [
+      2.32,
+      5,
+      4,
+      1.40,
+      3,
+    ],
   ),
   Category(
     id: 2,
@@ -15,6 +32,23 @@ var categoryList = [
     imageUrl: 'assets/images/fisika.png',
     iconUrl: 'assets/icon/ic_fisika.png',
     color: fisikaColor,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet lectus proin nibh nisl condimentum id venenatis a. Nulla pellentesque dignissim enim sit amet venenatis urna.',
+    rating: 8,
+    student: 150,
+    listCourseTitle: [
+      'Apa itu Fisika?',
+      'Rangkaian arus searah',
+      'Hukum Ohm',
+      'Fluida',
+      'Hukum Kirchoff'
+    ],
+    listCourseDuration: [
+      3,
+      5.4,
+      4.1,
+      2.10,
+      4,
+    ],
   ),
   Category(
     id: 3,
@@ -22,6 +56,23 @@ var categoryList = [
     imageUrl: 'assets/images/kimia.png',
     iconUrl: 'assets/icon/ic_kimia.png',
     color: kimiaColor,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet lectus proin nibh nisl condimentum id venenatis a. Nulla pellentesque dignissim enim sit amet venenatis urna.',
+    rating: 9,
+    student: 65,
+    listCourseTitle: [
+      'Apa itu Kimia?',
+      'Sifat koloid',
+      'Sistem koloid',
+      'Pembuatan koloid',
+      'Peranan koloid',
+    ],
+    listCourseDuration: [
+      4.3,
+      5.1,
+      2.4,
+      2.10,
+      6,
+    ],
   ),
   Category(
     id: 4,
@@ -29,6 +80,23 @@ var categoryList = [
     imageUrl: 'assets/images/math.png',
     iconUrl: 'assets/icon/ic_mtk.png',
     color: mathColor,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet lectus proin nibh nisl condimentum id venenatis a. Nulla pellentesque dignissim enim sit amet venenatis urna.',
+    rating: 10,
+    student: 41,
+    listCourseTitle: [
+      'Apa itu Matematika?',
+      'Logaritma',
+      'Aljabar Linear',
+      'Peluang',
+      'Eksponensial'
+    ],
+    listCourseDuration: [
+      3,
+      2,
+      1.20,
+      5.10,
+      1.10,
+    ],
   ),
   Category(
     id: 5,
@@ -36,6 +104,23 @@ var categoryList = [
     imageUrl: 'assets/images/biologii.png',
     iconUrl: 'assets/icon/ic_biologi.png',
     color: biologiColor,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet lectus proin nibh nisl condimentum id venenatis a. Nulla pellentesque dignissim enim sit amet venenatis urna.',
+    rating: 9.6,
+    student: 55,
+    listCourseTitle: [
+      'Apa itu Biologi?',
+      'Permasalahan Biologi',
+      'Objek Biologi',
+      'Cabang-cabang ilmu Biologi',
+      'Metode ilmiah'
+    ],
+    listCourseDuration: [
+      3,
+      1.50,
+      4.40,
+      1.10,
+      3.41,
+    ],
   ),
   Category(
     id: 6,
@@ -43,5 +128,22 @@ var categoryList = [
     imageUrl: 'assets/images/bahasa.png',
     iconUrl: 'assets/icon/ic_bahasa.png',
     color: bahasaColor,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet lectus proin nibh nisl condimentum id venenatis a. Nulla pellentesque dignissim enim sit amet venenatis urna.',
+    rating: 9.1,
+    student: 101,
+    listCourseTitle: [
+      'Apa itu Bahasa indonesia?',
+      'Pengertian teks deksripsi',
+      'Observasi',
+      'Diksi',
+      'Apa itu 5W 1H'
+    ],
+    listCourseDuration: [
+      5.30,
+      1.24,
+      4.20,
+      1.40,
+      3.20,
+    ],
   ),
 ];
