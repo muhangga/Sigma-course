@@ -92,19 +92,40 @@ class SettingPage extends StatelessWidget {
                           title: 'Dark Theme',
                           trailing: switchWidget(context)),
                       ButtonWidget(
-                        left: 20,
-                        right: 20,
-                        top: 30,
-                        bottom: 15,
-                        colorButton: blueColor,
-                        text: 'Logout',
-                        onPress: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginPage()));
-                        },
-                      ),
+                          left: 20,
+                          right: 20,
+                          top: 30,
+                          bottom: 15,
+                          colorButton: blueColor,
+                          text: 'Logout',
+                          onPress: () {
+                            return showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: Text('Logout'),
+                                  content: Text('Are you sure?'),
+                                  actions: [
+                                    FlatButton(
+                                      child: Text('Yes'),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (_) => LoginPage()));
+                                      },
+                                    ),
+                                    FlatButton(
+                                      child: Text('No'),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          }),
                     ],
                   ),
                 ),

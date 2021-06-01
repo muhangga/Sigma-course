@@ -40,7 +40,7 @@ var categoryList = [
   Category(
     id: 6,
     name: 'Bahasa',
-    imageUrl: 'assets/images/biologii.png',
+    imageUrl: 'assets/images/bahasa.png',
     iconUrl: 'assets/icon/ic_bahasa.png',
     color: bahasaColor,
   ),

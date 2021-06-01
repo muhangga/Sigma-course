@@ -11,8 +11,16 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  bool _obsecureText;
+
+  @override
+  void initState() {
+    super.initState();
+    _obsecureText = true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +59,20 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
                 child: TextField(
                   controller: passwordController,
-                  obscureText: true,
+                  obscureText: _obsecureText,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.lock_open),
-                    suffixIcon: Icon(Icons.remove_red_eye),
+                    suffixIcon: InkWell(
+                        onTap: () {
+                          setState(() {
+                            (_obsecureText == false)
+                                ? _obsecureText = true
+                                : _obsecureText = false;
+                          });
+                        },
+                        child: Icon(_obsecureText == false
+                            ? Icons.remove_red_eye
+                            : Icons.visibility_off)),
                     contentPadding: EdgeInsets.symmetric(horizontal: 25),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(40),

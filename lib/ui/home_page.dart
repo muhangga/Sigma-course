@@ -128,37 +128,17 @@ class _HomePageState extends State<HomePage> {
                             height: 35,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
-                              children: [
-                                CategoryList(
-                                  backgroundColor: Color(0xffFFEFBE),
-                                  text: 'Ekonomi',
-                                  textColor: yellowColor,
-                                ),
-                                CategoryList(
-                                  backgroundColor: Color(0xffF8F8F8),
-                                  text: 'Biologi',
-                                  textColor: grey2Color,
-                                ),
-                                CategoryList(
-                                  backgroundColor: Color(0xffF8F8F8),
-                                  text: 'Fisika',
-                                  textColor: grey2Color,
-                                ),
-                                CategoryList(
-                                  backgroundColor: Color(0xffF8F8F8),
-                                  text: 'Matematika',
-                                  textColor: grey2Color,
-                                ),
-                                CategoryList(
-                                  backgroundColor: Color(0xffF8F8F8),
-                                  text: 'Kimia',
-                                  textColor: grey2Color,
-                                ),
-                              ],
+                              children: categoryList.map((category) {
+                                return CategoryList(
+                                  backgroundColor: category.color,
+                                  text: category.name,
+                                  textColor: whiteColor,
+                                );
+                              }).toList(),
                             )),
                         SizedBox(height: 14),
                         Text(
-                          'Classess',
+                          'Last Seen',
                           style: primaryTextStyle.copyWith(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
@@ -168,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                               width: 305,
                               height: size.height,
                               child: ListView.builder(
-                                itemCount: 5,
+                                itemCount: categoryList.length,
                                 itemBuilder: (context, index) {
                                   return GestureDetector(
                                     onTap: () {

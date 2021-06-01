@@ -9,6 +9,19 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final nameController = TextEditingController();
+  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  bool _obsecureText;
+
+  @override
+  void initState() {
+    super.initState();
+    _obsecureText = true;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -55,6 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           width: size.width,
                           height: 50,
                           child: TextField(
+                            controller: nameController,
                             decoration: InputDecoration(
                               contentPadding:
                                   EdgeInsets.symmetric(horizontal: 25),
@@ -73,6 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           width: size.width,
                           height: 50,
                           child: TextField(
+                            controller: usernameController,
                             decoration: InputDecoration(
                               contentPadding:
                                   EdgeInsets.symmetric(horizontal: 25),
@@ -91,6 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           width: size.width,
                           height: 50,
                           child: TextField(
+                            controller: emailController,
                             decoration: InputDecoration(
                               contentPadding:
                                   EdgeInsets.symmetric(horizontal: 25),
@@ -109,10 +125,21 @@ class _RegisterPageState extends State<RegisterPage> {
                           width: size.width,
                           height: 50,
                           child: TextField(
-                            obscureText: true,
+                            controller: passwordController,
+                            obscureText: _obsecureText,
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.lock_open),
-                              suffixIcon: Icon(Icons.remove_red_eye),
+                              suffixIcon: InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      (_obsecureText == false)
+                                          ? _obsecureText = true
+                                          : _obsecureText = false;
+                                    });
+                                  },
+                                  child: Icon(_obsecureText == false
+                                      ? Icons.remove_red_eye
+                                      : Icons.visibility_off)),
                               contentPadding:
                                   EdgeInsets.symmetric(horizontal: 25),
                               border: OutlineInputBorder(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sigma_course/common/theme.dart';
+import 'package:sigma_course/ui/help_page.dart';
 import 'package:sigma_course/ui/list_page.dart';
 import 'package:sigma_course/ui/login_page.dart';
 import 'package:sigma_course/ui/my_course_page.dart';
@@ -40,7 +41,7 @@ class DrawerWidget extends StatelessWidget {
               text: 'Help',
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => SettingPage()));
+                    context, MaterialPageRoute(builder: (_) => HelpPage()));
               }),
           Divider(height: 25, thickness: 1),
           Padding(
@@ -63,8 +64,32 @@ class DrawerWidget extends StatelessWidget {
               icon: 'assets/icon/ic_logout.png',
               text: 'Logout',
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => LoginPage()));
+                return showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Logout'),
+                        content: Text('Are you sure?'),
+                        actions: [
+                          FlatButton(
+                            child: Text('Yes'),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => LoginPage()));
+                            },
+                          ),
+                          FlatButton(
+                            child:
+                                Text('No'),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
+                      );
+                    });
               }),
           SizedBox(height: 10),
         ],
